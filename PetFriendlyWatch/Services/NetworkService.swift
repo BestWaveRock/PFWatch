@@ -8,6 +8,9 @@ enum NetworkError: LocalizedError {
     case decodingError(String)
     case noData
     case notAuthenticated
+    case loginFailed(reason: String)
+    case encryptionFailed(String)
+    case networkError(String)
 
     var errorDescription: String? {
         switch self {
@@ -16,6 +19,9 @@ enum NetworkError: LocalizedError {
         case .decodingError(let detail): return "数据解析失败: \(detail)"
         case .noData: return "无返回数据"
         case .notAuthenticated: return "未登录"
+        case .loginFailed(let reason): return reason
+        case .encryptionFailed(let detail): return "加密失败: \(detail)"
+        case .networkError(let detail): return "网络错误: \(detail)"
         }
     }
 }
@@ -27,7 +33,7 @@ struct ApiResponse<T: Decodable>: Decodable {
 }
 
 final class NetworkService {
-    /// Token（来自 iPhone 同步或手动设置）
+    /// Token（来自登录或 iPhone 同步）
     static var token: String? {
         get { UserDefaults.standard.string(forKey: "auth_token") }
         set { UserDefaults.standard.set(newValue, forKey: "auth_token") }
@@ -69,7 +75,8 @@ final class NetworkService {
 
     // MARK: - 通用请求
 
-    private static func request<T: Decodable>(_ path: String) async throws -> T {
+    /// 普通 GET 请求（带 token）
+    static func request<T: Decodable>(_ path: String) async throws -> T {
         guard let url = URL(string: baseURL + path) else {
             throw NetworkError.invalidURL
         }
@@ -90,6 +97,45 @@ final class NetworkService {
 
         guard (200...299).contains(httpResp.statusCode) else {
             let body = String(data: data, encoding: .utf8) ?? ""
+            throw NetworkError.httpError(statusCode: httpResp.statusCode, message: body)
+        }
+
+        do {
+            let decoder = JSONDecoder()
+            return try decoder.decode(T.self, from: data)
+        } catch {
+            throw NetworkError.decodingError(error.localizedDescription)
+        }
+    }
+
+    /// 加密请求（用于登录等需要加密的 POST）
+    static func encryptedRequest<T: Decodable>(_ path: String, method: String = "GET") async throws -> T {
+        guard let url = URL(string: baseURL + path) else {
+            throw NetworkError.invalidURL
+        }
+
+        var req = URLRequest(url: url)
+        req.httpMethod = method
+        req.setValue("application/json;charset=UTF-8", forHTTPHeaderField: "Content-Type")
+        req.setValue(Secrets.appKey, forHTTPHeaderField: "X-APP-KEY")
+        req.setValue(Secrets.clientId, forHTTPHeaderField: "CliendId")
+        req.setValue("zh_CN", forHTTPHeaderField: "Content-Language")
+
+        if let token = token, !token.isEmpty {
+            req.setValue(token, forHTTPHeaderField: "Authorization")
+        }
+
+        let (data, response) = try await session.data(for: req)
+
+        guard let httpResp = response as? HTTPURLResponse else {
+            throw NetworkError.httpError(statusCode: 0, message: "无响应")
+        }
+
+        guard (200...299).contains(httpResp.statusCode) else {
+            let body = String(data: data, encoding: .utf8) ?? ""
+            if httpResp.statusCode == 401 || httpResp.statusCode == 403 {
+                throw NetworkError.notAuthenticated
+            }
             throw NetworkError.httpError(statusCode: httpResp.statusCode, message: body)
         }
 

@@ -10,5 +10,10 @@ build/
 # Secrets（敏感信息，不提交）
 PetFriendlyWatch/Secrets.swift
 
+# Build artifacts
+.build/
+DerivedData/
+*.xcuserdata
+
 # Temporary
 /tmp/

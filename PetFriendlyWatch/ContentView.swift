@@ -1,88 +1,101 @@
 import SwiftUI
-import WatchConnectivity
 
 struct ContentView: View {
-    @State private var isLoggedIn = NetworkService.isLoggedIn
-    @State private var showMainContent = false
+    var onLogout: (() -> Void)?
+
+    @State private var showLogoutConfirm = false
 
     var body: some View {
-        Group {
-            if isLoggedIn {
-                mainListView
-            } else {
-                loginPromptView
-            }
-        }
-        .navigationTitle("PetFriendly")
-        .onReceive(NotificationCenter.default.publisher(for: WatchSessionManager.tokenDidUpdate)) { _ in
-            // iPhone 同步了 token → 自动登录
-            withAnimation {
-                isLoggedIn = NetworkService.isLoggedIn
-            }
-        }
-    }
+        TabView {
+            // 宠物列表
+            PetListView()
+                .tabItem {
+                    Label("萌宠", systemImage: "pawprint")
+                }
 
-    // MARK: - 主列表
-
-    private var mainListView: some View {
-        List {
-            NavigationLink(destination: PetListView()) {
-                Label("我的萌宠", systemImage: "pawprint.circle")
-            }
-            Label("订单", systemImage: "list.clipboard")
-            Label("消息", systemImage: "message")
-            Label("我的", systemImage: "person.circle")
+            // 个人/设置
+            ProfileView(onLogout: onLogout)
+                .tabItem {
+                    Label("我的", systemImage: "person.circle")
+                }
         }
     }
+}
 
-    // MARK: - 登录提示页
+// MARK: - 简单个人页（含退出登录）
 
-    private var loginPromptView: some View {
-        VStack(spacing: 16) {
-            Spacer()
+struct ProfileView: View {
+    var onLogout: (() -> Void)?
 
-            Image(systemName: "lock.shield")
-                .font(.system(size: 40))
-                .foregroundColor(.accentColor)
+    @State private var showLogoutConfirm = false
 
-            Text("尚未登录")
-                .font(.headline)
-                .fontWeight(.semibold)
-
-            Text("请在 iPhone 的 PetFriendly App 上\n登录后，token 将自动同步到手表")
-                .font(.caption)
-                .multilineTextAlignment(.center)
-                .foregroundColor(.secondary)
-                .padding(.horizontal)
-
-            // 手动刷新按钮（iPhone 已登录但 Watch 没收到时用）
-            Button(action: {
-                // 尝试重新从 WC session 获取
-                if WCSession.default.isReachable {
-                    WCSession.default.sendMessage(["requestToken": true], replyHandler: { reply in
-                        if let token = reply["token"] as? String {
-                            NetworkService.token = token
-                            DispatchQueue.main.async {
-                                withAnimation { isLoggedIn = true }
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 16) {
+                // 用户信息
+                VStack(spacing: 8) {
+                    if let avatar = NetworkService.userAvatar, !avatar.isEmpty {
+                        let url = avatar.hasPrefix("http") ? URL(string: avatar) : URL(string: "https://rustfs.petfriendly.icu/jiaxu-technology" + avatar)
+                        AsyncImage(url: url) { phase in
+                            switch phase {
+                            case .success(let img):
+                                img.resizable().scaledToFill()
+                                    .frame(width: 60, height: 60)
+                                    .clipShape(Circle())
+                            default:
+                                Image(systemName: "person.circle.fill")
+                                    .font(.system(size: 50))
+                                    .foregroundColor(.accentColor)
                             }
                         }
-                    }, errorHandler: { _ in
-                        // 静默失败
-                    })
+                    } else {
+                        Image(systemName: "person.circle.fill")
+                            .font(.system(size: 50))
+                            .foregroundColor(.accentColor)
+                    }
+
+                    if let name = AuthService.shared.currentUser?.nickName {
+                        Text(name)
+                            .font(.headline)
+                    } else if let name = NetworkService.userNickname {
+                        Text(name)
+                            .font(.headline)
+                    } else {
+                        Text("用户")
+                            .font(.headline)
+                    }
                 }
-            }) {
-                Label("尝试同步", systemImage: "arrow.triangle.2.circlepath")
-                    .font(.caption)
+                .padding(.top, 10)
+
+                Divider()
+
+                // 退出登录
+                Button(role: .destructive) {
+                    showLogoutConfirm = true
+                } label: {
+                    HStack {
+                        Image(systemName: "rectangle.portrait.and.arrow.right")
+                        Text("退出登录")
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 10)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.red.opacity(0.12))
+                    )
+                }
+                .buttonStyle(.plain)
             }
-            .buttonStyle(.bordered)
-            .tint(.accentColor)
-
-            Spacer()
-
-            Text("已在 App 登录？点击上方同步")
-                .font(.caption2)
-                .foregroundColor(.secondary)
+            .padding(.horizontal, 16)
         }
-        .padding()
+        .navigationTitle("我的")
+        .alert("退出登录", isPresented: $showLogoutConfirm) {
+            Button("取消", role: .cancel) {}
+            Button("退出", role: .destructive) {
+                onLogout?()
+            }
+        } message: {
+            Text("确定要退出当前账号吗？")
+        }
     }
 }

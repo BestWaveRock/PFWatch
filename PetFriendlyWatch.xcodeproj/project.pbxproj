@@ -1,378 +1,314 @@
 // !$*UTF8*$!
 {
-  archiveVersion = 1;
-  classes = {
-  };
-  objectVersion = 77;
-  objects = {
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
 
 /* Begin PBXBuildFile section */
-    E164CB988435AB18E5E714C9 /* PetFriendlyWatchApp.swift in Sources */ = {
-      isa = PBXBuildFile;
-      fileRef = C588653F96CB5D7542D7C8BA /* PetFriendlyWatchApp.swift */;
-    };
-    4064A5E390796E6B81A6C2CC /* ContentView.swift in Sources */ = {
-      isa = PBXBuildFile;
-      fileRef = E1F76932197EC1BD331F2329 /* ContentView.swift */;
-    };
-    879D9A10DF7050C247510BAD /* Assets.xcassets in Resources */ = {
-      isa = PBXBuildFile;
-      fileRef = 611EC921C7DDF5CCE6C170B5 /* Assets.xcassets */;
-    };
-    B3632FEB60FF6D2A9BAF7139 /* Preview Assets.xcassets in Resources */ = {
-      isa = PBXBuildFile;
-      fileRef = 9C42682178CE20A23C34A31D /* Preview Assets.xcassets */;
-    };
-    97F57D67D81CCD81F19BEA59 /* Secrets.swift in Sources */ = {
-      isa = PBXBuildFile;
-      fileRef = 8D038B6D39C1BC47BED74CDF /* Secrets.swift */;
-    };
-    CCC6939B81ED38E3CC59694D /* Models/Pet.swift in Sources */ = {
-      isa = PBXBuildFile;
-      fileRef = 611768C05623F4817F625E95 /* Models/Pet.swift */;
-    };
-    3795349D491C9C2094F89C0F /* Services/NetworkService.swift in Sources */ = {
-      isa = PBXBuildFile;
-      fileRef = 3C768EF574F2007C3C1AD0D7 /* Services/NetworkService.swift */;
-    };
-    ED101F524C9EE3C1BF7C37FE /* Views/PetListView.swift in Sources */ = {
-      isa = PBXBuildFile;
-      fileRef = E044F6C9F4FFD3DA156BDFBA /* Views/PetListView.swift */;
-    };
-    39DA729A6CF29050505D0CE5 /* Views/PetDetailView.swift in Sources */ = {
-      isa = PBXBuildFile;
-      fileRef = 4D4FAAE8773EEB1603766B7E /* Views/PetDetailView.swift */;
-    };
-    F85278ABC3BF5FE0B72A2A94 /* Services/WatchSessionManager.swift in Sources */ = {
-      isa = PBXBuildFile;
-      fileRef = 412147B1F31128D5BA0C2A7F /* Services/WatchSessionManager.swift */;
-    };
+		31021E25810E3CAB4BA8FBD5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE1D5744F41E9553CA2C55 /* LoginView.swift */; };
+		3795349D491C9C2094F89C0F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C768EF574F2007C3C1AD0D7 /* NetworkService.swift */; };
+		39DA729A6CF29050505D0CE5 /* PetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4FAAE8773EEB1603766B7E /* PetDetailView.swift */; };
+		4064A5E390796E6B81A6C2CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F76932197EC1BD331F2329 /* ContentView.swift */; };
+		879D9A10DF7050C247510BAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611EC921C7DDF5CCE6C170B5 /* Assets.xcassets */; };
+		92852326692879E73CA55E82 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B2AF0531DE96E70AFF311 /* AuthService.swift */; };
+		97F57D67D81CCD81F19BEA59 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D038B6D39C1BC47BED74CDF /* Secrets.swift */; };
+		9D2D98121A479808FA65645B /* AuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832D65877B8E2E579EA70C5E /* AuthModels.swift */; };
+		AFF969B30B41FCCAAA89EF67 /* CryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235AAFF02477D4CBB8BC39F4 /* CryptoService.swift */; };
+		B3632FEB60FF6D2A9BAF7139 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C42682178CE20A23C34A31D /* Preview Assets.xcassets */; };
+		CCC6939B81ED38E3CC59694D /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611768C05623F4817F625E95 /* Pet.swift */; };
+		E164CB988435AB18E5E714C9 /* PetFriendlyWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C588653F96CB5D7542D7C8BA /* PetFriendlyWatchApp.swift */; };
+		ED101F524C9EE3C1BF7C37FE /* PetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044F6C9F4FFD3DA156BDFBA /* PetListView.swift */; };
+		F85278ABC3BF5FE0B72A2A94 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412147B1F31128D5BA0C2A7F /* WatchSessionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-    C588653F96CB5D7542D7C8BA /* PetFriendlyWatchApp.swift */ = {
-      isa = PBXFileReference;
-      lastKnownFileType = sourcecode.swift;
-      path = PetFriendlyWatchApp.swift;
-      sourceTree = "<group>";
-    };
-    E1F76932197EC1BD331F2329 /* ContentView.swift */ = {
-      isa = PBXFileReference;
-      lastKnownFileType = sourcecode.swift;
-      path = ContentView.swift;
-      sourceTree = "<group>";
-    };
-    611EC921C7DDF5CCE6C170B5 /* Assets.xcassets */ = {
-      isa = PBXFileReference;
-      lastKnownFileType = folder.assetcatalog;
-      path = Assets.xcassets;
-      sourceTree = "<group>";
-    };
-    9C42682178CE20A23C34A31D /* Preview Assets.xcassets */ = {
-      isa = PBXFileReference;
-      lastKnownFileType = folder.assetcatalog;
-      path = "Preview Assets.xcassets";
-      sourceTree = "<group>";
-    };
-    8D038B6D39C1BC47BED74CDF /* Secrets.swift */ = {
-      isa = PBXFileReference;
-      lastKnownFileType = sourcecode.swift;
-      path = Secrets.swift;
-      sourceTree = "<group>";
-    };
-    611768C05623F4817F625E95 /* Models/Pet.swift */ = {
-      isa = PBXFileReference;
-      lastKnownFileType = sourcecode.swift;
-      path = Models/Pet.swift;
-      sourceTree = "<group>";
-    };
-    3C768EF574F2007C3C1AD0D7 /* Services/NetworkService.swift */ = {
-      isa = PBXFileReference;
-      lastKnownFileType = sourcecode.swift;
-      path = Services/NetworkService.swift;
-      sourceTree = "<group>";
-    };
-    E044F6C9F4FFD3DA156BDFBA /* Views/PetListView.swift */ = {
-      isa = PBXFileReference;
-      lastKnownFileType = sourcecode.swift;
-      path = Views/PetListView.swift;
-      sourceTree = "<group>";
-    };
-    4D4FAAE8773EEB1603766B7E /* Views/PetDetailView.swift */ = {
-      isa = PBXFileReference;
-      lastKnownFileType = sourcecode.swift;
-      path = Views/PetDetailView.swift;
-      sourceTree = "<group>";
-    };
-    412147B1F31128D5BA0C2A7F /* Services/WatchSessionManager.swift */ = {
-      isa = PBXFileReference;
-      lastKnownFileType = sourcecode.swift;
-      path = Services/WatchSessionManager.swift;
-      sourceTree = "<group>";
-    };
-    E2CA818B09212F9381E930F2 /* PetFriendlyWatch.app */ = {
-      isa = PBXFileReference;
-      explicitFileType = wrapper.application;
-      includeInIndex = 0;
-      path = PetFriendlyWatch.app;
-      sourceTree = BUILT_PRODUCTS_DIR;
-    };
+		235AAFF02477D4CBB8BC39F4 /* CryptoService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CryptoService.swift; path = Services/CryptoService.swift; sourceTree = "<group>"; };
+		3BDE1D5744F41E9553CA2C55 /* LoginView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = Views/LoginView.swift; sourceTree = "<group>"; };
+		3C768EF574F2007C3C1AD0D7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/NetworkService.swift; sourceTree = "<group>"; };
+		412147B1F31128D5BA0C2A7F /* WatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/WatchSessionManager.swift; sourceTree = "<group>"; };
+		4D4FAAE8773EEB1603766B7E /* PetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/PetDetailView.swift; sourceTree = "<group>"; };
+		505B2AF0531DE96E70AFF311 /* AuthService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthService.swift; path = Services/AuthService.swift; sourceTree = "<group>"; };
+		611768C05623F4817F625E95 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/Pet.swift; sourceTree = "<group>"; };
+		611EC921C7DDF5CCE6C170B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		832D65877B8E2E579EA70C5E /* AuthModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthModels.swift; path = Models/AuthModels.swift; sourceTree = "<group>"; };
+		8D038B6D39C1BC47BED74CDF /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		9C42682178CE20A23C34A31D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C588653F96CB5D7542D7C8BA /* PetFriendlyWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFriendlyWatchApp.swift; sourceTree = "<group>"; };
+		E044F6C9F4FFD3DA156BDFBA /* PetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/PetListView.swift; sourceTree = "<group>"; };
+		E1F76932197EC1BD331F2329 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E2CA818B09212F9381E930F2 /* PetFriendlyWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetFriendlyWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-    67D466B48E2A0813D35647A2 /* Frameworks */ = {
-      isa = PBXFrameworksBuildPhase;
-      buildActionMask = 2147483647;
-      files = (
-      );
-      runOnlyForDeploymentPostprocessing = 0;
-    };
+		67D466B48E2A0813D35647A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-    5DA4C4E5031224A4EA41DC61 = {
-      isa = PBXGroup;
-      children = (
-        4C1C5A1B346644D68B552F45,
-        132CF49964F05B920839AA6F,
-      );
-      sourceTree = "<group>";
-    };
-    4C1C5A1B346644D68B552F45 /* PetFriendlyWatch */ = {
-      isa = PBXGroup;
-      children = (
-        C588653F96CB5D7542D7C8BA /* PetFriendlyWatchApp.swift */,
-        E1F76932197EC1BD331F2329 /* ContentView.swift */,
-        8D038B6D39C1BC47BED74CDF /* Secrets.swift */,
-        611768C05623F4817F625E95 /* Models/Pet.swift */,
-        3C768EF574F2007C3C1AD0D7 /* Services/NetworkService.swift */,
-        E044F6C9F4FFD3DA156BDFBA /* Views/PetListView.swift */,
-        4D4FAAE8773EEB1603766B7E /* Views/PetDetailView.swift */,
-        412147B1F31128D5BA0C2A7F /* Services/WatchSessionManager.swift */,
-        611EC921C7DDF5CCE6C170B5 /* Assets.xcassets */,
-        31F2E8D3C394B0536C81F32D /* Preview Content */,
-      );
-      path = PetFriendlyWatch;
-      sourceTree = "<group>";
-    };
-    31F2E8D3C394B0536C81F32D /* Preview Content */ = {
-      isa = PBXGroup;
-      children = (
-        9C42682178CE20A23C34A31D /* Preview Assets.xcassets */,
-      );
-      path = "Preview Content";
-      sourceTree = "<group>";
-    };
-    132CF49964F05B920839AA6F /* Products */ = {
-      isa = PBXGroup;
-      children = (
-        E2CA818B09212F9381E930F2 /* PetFriendlyWatch.app */,
-      );
-      name = Products;
-      sourceTree = "<group>";
-    };
+		132CF49964F05B920839AA6F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2CA818B09212F9381E930F2 /* PetFriendlyWatch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		31F2E8D3C394B0536C81F32D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9C42682178CE20A23C34A31D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4C1C5A1B346644D68B552F45 /* PetFriendlyWatch */ = {
+			isa = PBXGroup;
+			children = (
+				C588653F96CB5D7542D7C8BA /* PetFriendlyWatchApp.swift */,
+				E1F76932197EC1BD331F2329 /* ContentView.swift */,
+				8D038B6D39C1BC47BED74CDF /* Secrets.swift */,
+				611768C05623F4817F625E95 /* Pet.swift */,
+				3C768EF574F2007C3C1AD0D7 /* NetworkService.swift */,
+				E044F6C9F4FFD3DA156BDFBA /* PetListView.swift */,
+				4D4FAAE8773EEB1603766B7E /* PetDetailView.swift */,
+				412147B1F31128D5BA0C2A7F /* WatchSessionManager.swift */,
+				611EC921C7DDF5CCE6C170B5 /* Assets.xcassets */,
+				31F2E8D3C394B0536C81F32D /* Preview Content */,
+				235AAFF02477D4CBB8BC39F4 /* CryptoService.swift */,
+				505B2AF0531DE96E70AFF311 /* AuthService.swift */,
+				832D65877B8E2E579EA70C5E /* AuthModels.swift */,
+				3BDE1D5744F41E9553CA2C55 /* LoginView.swift */,
+			);
+			path = PetFriendlyWatch;
+			sourceTree = "<group>";
+		};
+		5DA4C4E5031224A4EA41DC61 = {
+			isa = PBXGroup;
+			children = (
+				4C1C5A1B346644D68B552F45 /* PetFriendlyWatch */,
+				132CF49964F05B920839AA6F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-    CF561B85C4E31213D752F023 /* PetFriendlyWatch */ = {
-      isa = PBXNativeTarget;
-      buildConfigurationList = 6815A5EA500338315A460F51;
-      buildPhases = (
-        C116218A06CC2BFE3F096F6F /* Sources */,
-        67D466B48E2A0813D35647A2 /* Frameworks */,
-        B45BBFD16851DF2D7AA2614E /* Resources */,
-      );
-      buildRules = (
-      );
-      dependencies = (
-      );
-      name = PetFriendlyWatch;
-      productName = PetFriendlyWatch;
-      productReference = E2CA818B09212F9381E930F2;
-      productType = "com.apple.product-type.application";
-    };
+		CF561B85C4E31213D752F023 /* PetFriendlyWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6815A5EA500338315A460F51 /* Build configuration list for PBXNativeTarget "PetFriendlyWatch" */;
+			buildPhases = (
+				C116218A06CC2BFE3F096F6F /* Sources */,
+				67D466B48E2A0813D35647A2 /* Frameworks */,
+				B45BBFD16851DF2D7AA2614E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PetFriendlyWatch;
+			productName = PetFriendlyWatch;
+			productReference = E2CA818B09212F9381E930F2 /* PetFriendlyWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-    010F17F1190EB9EFD7457074 /* Project object */ = {
-      isa = PBXProject;
-      attributes = {
-        BuildIndependentTargetsInParallel = 1;
-        LastSwiftUpdateCheck = 2600;
-        LastUpgradeCheck = 2600;
-      };
-      buildConfigurationList = 748FE986466716FE7327E670;
-      compatibilityVersion = "Xcode 14.0";
-      developmentRegion = en;
-      hasScannedForEncodings = 0;
-      knownRegions = (
-        en,
-        Base,
-      );
-      mainGroup = 5DA4C4E5031224A4EA41DC61;
-      productRefGroup = 132CF49964F05B920839AA6F;
-      projectDirPath = "";
-      projectRoot = "";
-      targets = (
-        CF561B85C4E31213D752F023,
-      );
-    };
+		010F17F1190EB9EFD7457074 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+			};
+			buildConfigurationList = 748FE986466716FE7327E670 /* Build configuration list for PBXProject "PetFriendlyWatch" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5DA4C4E5031224A4EA41DC61;
+			productRefGroup = 132CF49964F05B920839AA6F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF561B85C4E31213D752F023 /* PetFriendlyWatch */,
+			);
+		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-    B45BBFD16851DF2D7AA2614E /* Resources */ = {
-      isa = PBXResourcesBuildPhase;
-      buildActionMask = 2147483647;
-      files = (
-        879D9A10DF7050C247510BAD /* Assets.xcassets in Resources */,
-        B3632FEB60FF6D2A9BAF7139 /* Preview Assets.xcassets in Resources */,
-      );
-      runOnlyForDeploymentPostprocessing = 0;
-    };
+		B45BBFD16851DF2D7AA2614E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				879D9A10DF7050C247510BAD /* Assets.xcassets in Resources */,
+				B3632FEB60FF6D2A9BAF7139 /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
-    C116218A06CC2BFE3F096F6F /* Sources */ = {
-      isa = PBXSourcesBuildPhase;
-      buildActionMask = 2147483647;
-      files = (
-        E164CB988435AB18E5E714C9 /* PetFriendlyWatchApp.swift in Sources */,
-        4064A5E390796E6B81A6C2CC /* ContentView.swift in Sources */,
-        97F57D67D81CCD81F19BEA59 /* Secrets.swift in Sources */,
-        CCC6939B81ED38E3CC59694D /* Models/Pet.swift in Sources */,
-        3795349D491C9C2094F89C0F /* Services/NetworkService.swift in Sources */,
-        ED101F524C9EE3C1BF7C37FE /* Views/PetListView.swift in Sources */,
-        39DA729A6CF29050505D0CE5 /* Views/PetDetailView.swift in Sources */,
-        F85278ABC3BF5FE0B72A2A94 /* Services/WatchSessionManager.swift in Sources */,
-      );
-      runOnlyForDeploymentPostprocessing = 0;
-    };
+/* Begin PBXSourcesBuildPhase section */
+		C116218A06CC2BFE3F096F6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E164CB988435AB18E5E714C9 /* PetFriendlyWatchApp.swift in Sources */,
+				4064A5E390796E6B81A6C2CC /* ContentView.swift in Sources */,
+				97F57D67D81CCD81F19BEA59 /* Secrets.swift in Sources */,
+				CCC6939B81ED38E3CC59694D /* Pet.swift in Sources */,
+				3795349D491C9C2094F89C0F /* NetworkService.swift in Sources */,
+				ED101F524C9EE3C1BF7C37FE /* PetListView.swift in Sources */,
+				39DA729A6CF29050505D0CE5 /* PetDetailView.swift in Sources */,
+				F85278ABC3BF5FE0B72A2A94 /* WatchSessionManager.swift in Sources */,
+				AFF969B30B41FCCAAA89EF67 /* CryptoService.swift in Sources */,
+				92852326692879E73CA55E82 /* AuthService.swift in Sources */,
+				9D2D98121A479808FA65645B /* AuthModels.swift in Sources */,
+				31021E25810E3CAB4BA8FBD5 /* LoginView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-    1B4426B838242016016B0D5B /* Debug */ = {
-      isa = XCBuildConfiguration;
-      buildSettings = {
-        ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-        CODE_SIGN_STYLE = Automatic;
-        CURRENT_PROJECT_VERSION = 1;
-        DEVELOPMENT_TEAM = 4G5FFG6A53;
-        GENERATE_INFOPLIST_FILE = YES;
-        INFOPLIST_KEY_CFBundleDisplayName = "PetFriendly";
-        INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.biscuits";
-        INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
-        MARKETING_VERSION = 1.0.0;
-        PRODUCT_BUNDLE_IDENTIFIER = com.biscuits.watchkitapp;
-        PRODUCT_NAME = "$(TARGET_NAME)";
-        SDKROOT = watchos;
-        SUPPORTED_PLATFORMS = "watchos watchsimulator";
-        SKIP_INSTALL = YES;
-        SWIFT_VERSION = 5.0;
-        TARGETED_DEVICE_FAMILY = 4;
-        WATCHOS_DEPLOYMENT_TARGET = 10.0;
-        ARCHS = "arm64_32 arm64";
-        ONLY_ACTIVE_ARCH = YES;
-        SUPPORTS_MACCATALYST = NO;
-      };
-      name = Debug;
-    };
-    20BCA14793AB5D8354EFDB1F /* Release */ = {
-      isa = XCBuildConfiguration;
-      buildSettings = {
-        ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-        CODE_SIGN_STYLE = Automatic;
-        CURRENT_PROJECT_VERSION = 1;
-        DEVELOPMENT_TEAM = 4G5FFG6A53;
-        GENERATE_INFOPLIST_FILE = YES;
-        INFOPLIST_KEY_CFBundleDisplayName = "PetFriendly";
-        INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.biscuits";
-        INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
-        MARKETING_VERSION = 1.0.0;
-        PRODUCT_BUNDLE_IDENTIFIER = com.biscuits.watchkitapp;
-        PRODUCT_NAME = "$(TARGET_NAME)";
-        SDKROOT = watchos;
-        SUPPORTED_PLATFORMS = "watchos watchsimulator";
-        SKIP_INSTALL = YES;
-        SWIFT_VERSION = 5.0;
-        TARGETED_DEVICE_FAMILY = 4;
-        WATCHOS_DEPLOYMENT_TARGET = 10.0;
-        ARCHS = "arm64_32 arm64";
-        ONLY_ACTIVE_ARCH = YES;
-        SUPPORTS_MACCATALYST = NO;
-      };
-      name = Release;
-    };
-    /* Project config */
-    010F17F1190EB9EFD7457074_Debug = {
-      isa = XCBuildConfiguration;
-      buildSettings = {
-        ALWAYS_SEARCH_USER_PATHS = NO;
-        CLANG_ANALYZER_NONNULL = YES;
-        CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-        CLANG_ENABLE_MODULES = YES;
-        CLANG_ENABLE_OBJC_ARC = YES;
-        COPY_PHASE_STRIP = NO;
-        DEBUG_INFORMATION_FORMAT = dwarf;
-        ENABLE_STRICT_OBJC_MSGSEND = YES;
-        ENABLE_TESTABILITY = YES;
-        GCC_DYNAMIC_NO_PIC = NO;
-        GCC_OPTIMIZATION_LEVEL = 0;
-        GCC_PREPROCESSOR_DEFINITIONS = (
-          "DEBUG=1",
-          "$(inherited)",
-        );
-        MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-        MTL_FAST_MATH = YES;
-        ONLY_ACTIVE_ARCH = YES;
-        SDKROOT = watchos;
-        SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-        SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-      };
-      name = Debug;
-    };
-    010F17F1190EB9EFD7457074_Release = {
-      isa = XCBuildConfiguration;
-      buildSettings = {
-        ALWAYS_SEARCH_USER_PATHS = NO;
-        CLANG_ANALYZER_NONNULL = YES;
-        CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-        CLANG_ENABLE_MODULES = YES;
-        CLANG_ENABLE_OBJC_ARC = YES;
-        COPY_PHASE_STRIP = NO;
-        DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-        ENABLE_NS_ASSERTIONS = NO;
-        ENABLE_STRICT_OBJC_MSGSEND = YES;
-        GCC_OPTIMIZATION_LEVEL = s;
-        MTL_ENABLE_DEBUG_INFO = NO;
-        MTL_FAST_MATH = YES;
-        SDKROOT = watchos;
-        SWIFT_COMPILATION_MODE = wholemodule;
-        SWIFT_OPTIMIZATION_LEVEL = "-O";
-        VALIDATE_PRODUCT = YES;
-      };
-      name = Release;
-    };
+		010F17F1190EB9EFD7457074_Debug /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = watchos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		010F17F1190EB9EFD7457074_Release /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = watchos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B4426B838242016016B0D5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					arm64_32,
+					arm64,
+				);
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4G5FFG6A53;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PetFriendly;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.biscuits;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				MARKETING_VERSION = 1.0.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.biscuits.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		20BCA14793AB5D8354EFDB1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					arm64_32,
+					arm64,
+				);
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4G5FFG6A53;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PetFriendly;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.biscuits;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				MARKETING_VERSION = 1.0.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.biscuits.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-    6815A5EA500338315A460F51 /* Build configuration list for PBXNativeTarget "PetFriendlyWatch" */ = {
-      isa = XCConfigurationList;
-      buildConfigurations = (
-        1B4426B838242016016B0D5B,
-        20BCA14793AB5D8354EFDB1F,
-      );
-      defaultConfigurationIsVisible = 0;
-      defaultConfigurationName = Release;
-    };
-    748FE986466716FE7327E670 /* Build configuration list for PBXProject "PetFriendlyWatch" */ = {
-      isa = XCConfigurationList;
-      buildConfigurations = (
-        010F17F1190EB9EFD7457074_Debug,
-        010F17F1190EB9EFD7457074_Release,
-      );
-      defaultConfigurationIsVisible = 0;
-      defaultConfigurationName = Release;
-    };
+		6815A5EA500338315A460F51 /* Build configuration list for PBXNativeTarget "PetFriendlyWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B4426B838242016016B0D5B /* Debug */,
+				20BCA14793AB5D8354EFDB1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		748FE986466716FE7327E670 /* Build configuration list for PBXProject "PetFriendlyWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				010F17F1190EB9EFD7457074_Debug /* Debug */,
+				010F17F1190EB9EFD7457074_Release /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
-  };
-  rootObject = 010F17F1190EB9EFD7457074;
+	};
+	rootObject = 010F17F1190EB9EFD7457074 /* Project object */;
 }

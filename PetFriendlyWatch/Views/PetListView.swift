@@ -1,37 +1,19 @@
 import SwiftUI
 import WatchKit
 
+// MARK: - Token 失效通知
+extension Notification.Name {
+    static let tokenDidExpire = Notification.Name("TokenDidExpire")
+}
+
 struct PetListView: View {
     @State private var pets: [Pet] = []
     @State private var isLoading = true
     @State private var errorMessage: String?
-    @State private var isAuthError = false   // token 失效
 
     var body: some View {
         Group {
-            if isAuthError {
-                // token 失效 → 提示重新登录
-                VStack(spacing: 12) {
-                    Image(systemName: "lock.shield")
-                        .font(.system(size: 36))
-                        .foregroundColor(.accentColor)
-
-                    Text("登录已失效")
-                        .font(.headline)
-
-                    Text("请在 iPhone 的 PetFriendly App 上\n重新登录后，token 将自动同步")
-                        .font(.caption2)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.secondary)
-
-                    Button("重试") {
-                        loadPets()
-                    }
-                    .buttonStyle(.bordered)
-                    .tint(.accentColor)
-                }
-                .padding()
-            } else if isLoading {
+            if isLoading {
                 ProgressView("加载中…")
             } else if let msg = errorMessage {
                 VStack(spacing: 8) {
@@ -65,12 +47,16 @@ struct PetListView: View {
         }
         .navigationTitle("我的萌宠")
         .onAppear { loadPets() }
+        .onReceive(NotificationCenter.default.publisher(for: .tokenDidExpire)) { _ in
+            // 当 token 失效通知发出时，清除并让根视图处理跳转到登录
+            isLoading = false
+            errorMessage = "登录已失效，请重新登录"
+        }
     }
 
     private func loadPets() {
         isLoading = true
         errorMessage = nil
-        isAuthError = false
         Task {
             do {
                 let result = try await NetworkService.fetchMyPets()
@@ -81,12 +67,20 @@ struct PetListView: View {
             } catch let error as NetworkError {
                 await MainActor.run {
                     switch error {
-                    case .httpError(let code, _) where code == 401 || code == 403:
-                        // token 失效，清除并通知 ContentView 切换到登录页
+                    case .httpError(let code, _):
+                        if code == 401 || code == 403 {
+                            // token 失效，清除并通知根视图
+                            NetworkService.token = nil
+                            isLoading = false
+                            NotificationCenter.default.post(name: .tokenDidExpire, object: nil)
+                        } else {
+                            errorMessage = error.localizedDescription
+                            isLoading = false
+                        }
+                    case .notAuthenticated:
                         NetworkService.token = nil
-                        isAuthError = true
                         isLoading = false
-                        NotificationCenter.default.post(name: WatchSessionManager.tokenDidUpdate, object: nil)
+                        NotificationCenter.default.post(name: .tokenDidExpire, object: nil)
                     default:
                         errorMessage = error.localizedDescription
                         isLoading = false
