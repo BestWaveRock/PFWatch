@@ -23,6 +23,30 @@
       isa = PBXBuildFile;
       fileRef = 9C42682178CE20A23C34A31D /* Preview Assets.xcassets */;
     };
+    97F57D67D81CCD81F19BEA59 /* Secrets.swift in Sources */ = {
+      isa = PBXBuildFile;
+      fileRef = 8D038B6D39C1BC47BED74CDF /* Secrets.swift */;
+    };
+    CCC6939B81ED38E3CC59694D /* Models/Pet.swift in Sources */ = {
+      isa = PBXBuildFile;
+      fileRef = 611768C05623F4817F625E95 /* Models/Pet.swift */;
+    };
+    3795349D491C9C2094F89C0F /* Services/NetworkService.swift in Sources */ = {
+      isa = PBXBuildFile;
+      fileRef = 3C768EF574F2007C3C1AD0D7 /* Services/NetworkService.swift */;
+    };
+    ED101F524C9EE3C1BF7C37FE /* Views/PetListView.swift in Sources */ = {
+      isa = PBXBuildFile;
+      fileRef = E044F6C9F4FFD3DA156BDFBA /* Views/PetListView.swift */;
+    };
+    39DA729A6CF29050505D0CE5 /* Views/PetDetailView.swift in Sources */ = {
+      isa = PBXBuildFile;
+      fileRef = 4D4FAAE8773EEB1603766B7E /* Views/PetDetailView.swift */;
+    };
+    F85278ABC3BF5FE0B72A2A94 /* Services/WatchSessionManager.swift in Sources */ = {
+      isa = PBXBuildFile;
+      fileRef = 412147B1F31128D5BA0C2A7F /* Services/WatchSessionManager.swift */;
+    };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +72,42 @@
       isa = PBXFileReference;
       lastKnownFileType = folder.assetcatalog;
       path = "Preview Assets.xcassets";
+      sourceTree = "<group>";
+    };
+    8D038B6D39C1BC47BED74CDF /* Secrets.swift */ = {
+      isa = PBXFileReference;
+      lastKnownFileType = sourcecode.swift;
+      path = Secrets.swift;
+      sourceTree = "<group>";
+    };
+    611768C05623F4817F625E95 /* Models/Pet.swift */ = {
+      isa = PBXFileReference;
+      lastKnownFileType = sourcecode.swift;
+      path = Models/Pet.swift;
+      sourceTree = "<group>";
+    };
+    3C768EF574F2007C3C1AD0D7 /* Services/NetworkService.swift */ = {
+      isa = PBXFileReference;
+      lastKnownFileType = sourcecode.swift;
+      path = Services/NetworkService.swift;
+      sourceTree = "<group>";
+    };
+    E044F6C9F4FFD3DA156BDFBA /* Views/PetListView.swift */ = {
+      isa = PBXFileReference;
+      lastKnownFileType = sourcecode.swift;
+      path = Views/PetListView.swift;
+      sourceTree = "<group>";
+    };
+    4D4FAAE8773EEB1603766B7E /* Views/PetDetailView.swift */ = {
+      isa = PBXFileReference;
+      lastKnownFileType = sourcecode.swift;
+      path = Views/PetDetailView.swift;
+      sourceTree = "<group>";
+    };
+    412147B1F31128D5BA0C2A7F /* Services/WatchSessionManager.swift */ = {
+      isa = PBXFileReference;
+      lastKnownFileType = sourcecode.swift;
+      path = Services/WatchSessionManager.swift;
       sourceTree = "<group>";
     };
     E2CA818B09212F9381E930F2 /* PetFriendlyWatch.app */ = {
@@ -83,6 +143,12 @@
       children = (
         C588653F96CB5D7542D7C8BA /* PetFriendlyWatchApp.swift */,
         E1F76932197EC1BD331F2329 /* ContentView.swift */,
+        8D038B6D39C1BC47BED74CDF /* Secrets.swift */,
+        611768C05623F4817F625E95 /* Models/Pet.swift */,
+        3C768EF574F2007C3C1AD0D7 /* Services/NetworkService.swift */,
+        E044F6C9F4FFD3DA156BDFBA /* Views/PetListView.swift */,
+        4D4FAAE8773EEB1603766B7E /* Views/PetDetailView.swift */,
+        412147B1F31128D5BA0C2A7F /* Services/WatchSessionManager.swift */,
         611EC921C7DDF5CCE6C170B5 /* Assets.xcassets */,
         31F2E8D3C394B0536C81F32D /* Preview Content */,
       );
@@ -171,6 +237,12 @@
       files = (
         E164CB988435AB18E5E714C9 /* PetFriendlyWatchApp.swift in Sources */,
         4064A5E390796E6B81A6C2CC /* ContentView.swift in Sources */,
+        97F57D67D81CCD81F19BEA59 /* Secrets.swift in Sources */,
+        CCC6939B81ED38E3CC59694D /* Models/Pet.swift in Sources */,
+        3795349D491C9C2094F89C0F /* Services/NetworkService.swift in Sources */,
+        ED101F524C9EE3C1BF7C37FE /* Views/PetListView.swift in Sources */,
+        39DA729A6CF29050505D0CE5 /* Views/PetDetailView.swift in Sources */,
+        F85278ABC3BF5FE0B72A2A94 /* Services/WatchSessionManager.swift in Sources */,
       );
       runOnlyForDeploymentPostprocessing = 0;
     };
