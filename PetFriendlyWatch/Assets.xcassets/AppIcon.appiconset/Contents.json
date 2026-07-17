@@ -1,0 +1,134 @@
+{
+  "images" : [
+    {
+      "idiom" : "watch",
+      "role" : "appLauncher",
+      "subtype" : "38mm",
+      "scale" : "2x",
+      "size" : "80x80"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "appLauncher",
+      "subtype" : "40mm",
+      "scale" : "2x",
+      "size" : "86x86"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "appLauncher",
+      "subtype" : "41mm",
+      "scale" : "2x",
+      "size" : "92x92"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "appLauncher",
+      "subtype" : "44mm",
+      "scale" : "2x",
+      "size" : "98x98"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "appLauncher",
+      "subtype" : "45mm",
+      "scale" : "2x",
+      "size" : "100x100"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "appLauncher",
+      "subtype" : "49mm",
+      "scale" : "2x",
+      "size" : "108x108"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "quickLook",
+      "subtype" : "38mm",
+      "scale" : "2x",
+      "size" : "98x98"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "quickLook",
+      "subtype" : "40mm",
+      "scale" : "2x",
+      "size" : "108x108"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "quickLook",
+      "subtype" : "41mm",
+      "scale" : "2x",
+      "size" : "102x102"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "quickLook",
+      "subtype" : "44mm",
+      "scale" : "2x",
+      "size" : "108x108"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "quickLook",
+      "subtype" : "45mm",
+      "scale" : "2x",
+      "size" : "110x110"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "quickLook",
+      "subtype" : "49mm",
+      "scale" : "2x",
+      "size" : "122x122"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "notificationCenter",
+      "subtype" : "38mm",
+      "scale" : "2x",
+      "size" : "48x48"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "notificationCenter",
+      "subtype" : "40mm",
+      "scale" : "2x",
+      "size" : "55x55"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "notificationCenter",
+      "subtype" : "41mm",
+      "scale" : "2x",
+      "size" : "50x50"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "notificationCenter",
+      "subtype" : "44mm",
+      "scale" : "2x",
+      "size" : "55x55"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "notificationCenter",
+      "subtype" : "45mm",
+      "scale" : "2x",
+      "size" : "54x54"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "notificationCenter",
+      "subtype" : "49mm",
+      "scale" : "2x",
+      "size" : "62x62"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

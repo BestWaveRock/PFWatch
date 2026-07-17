@@ -1,0 +1,11 @@
+# Xcode
+*.xcworkspace
+xcuserdata/
+DerivedData/
+build/
+
+# macOS
+.DS_Store
+
+# Temporary
+/tmp/
